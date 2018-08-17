@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 16, 2018 at 02:41 AM
+-- Generation Time: Aug 17, 2018 at 11:07 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -74,8 +74,29 @@ CREATE TABLE `pesanan` (
 --
 
 INSERT INTO `pesanan` (`id_pesanan`, `jumlah_pesanan`, `id_costumer`, `tanggal`) VALUES
-(1, '20000', '1', '2018-08-15'),
-(2, '15000', '2', '2018-08-09');
+(1, '50', '1', '2018-08-15'),
+(2, '50', '2', '2018-08-09');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `planing`
+--
+
+CREATE TABLE `planing` (
+  `id_planing` int(11) NOT NULL,
+  `p1` int(11) NOT NULL,
+  `p2` int(11) NOT NULL,
+  `p3` int(11) NOT NULL,
+  `p4` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `planing`
+--
+
+INSERT INTO `planing` (`id_planing`, `p1`, `p2`, `p3`, `p4`) VALUES
+(1, 20, 20, 20, 40);
 
 -- --------------------------------------------------------
 
@@ -107,7 +128,7 @@ INSERT INTO `setting` (`id`, `nama_website`, `logo`, `alamat`, `deskripsi`, `the
 
 CREATE TABLE `stok` (
   `id_stok` int(11) NOT NULL,
-  `bahan` enum('kayu peti','paku','log kayu') NOT NULL,
+  `bahan` enum('peti','paku','kayu') NOT NULL,
   `jumlah` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -116,9 +137,9 @@ CREATE TABLE `stok` (
 --
 
 INSERT INTO `stok` (`id_stok`, `bahan`, `jumlah`) VALUES
-(2, 'kayu peti', 156),
-(3, 'paku', 240),
-(4, 'log kayu', 1880);
+(2, 'peti', 51),
+(3, 'paku', 2040),
+(4, 'kayu', 20);
 
 -- --------------------------------------------------------
 
@@ -166,6 +187,12 @@ ALTER TABLE `pesanan`
   ADD PRIMARY KEY (`id_pesanan`);
 
 --
+-- Indexes for table `planing`
+--
+ALTER TABLE `planing`
+  ADD PRIMARY KEY (`id_planing`);
+
+--
 -- Indexes for table `setting`
 --
 ALTER TABLE `setting`
@@ -204,6 +231,12 @@ ALTER TABLE `costumer`
 --
 ALTER TABLE `pesanan`
   MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `planing`
+--
+ALTER TABLE `planing`
+  MODIFY `id_planing` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `stok`
