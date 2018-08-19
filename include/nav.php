@@ -15,6 +15,7 @@
         <li><a href="pesanan.php">Pesanan</a></li>
         <li><a href="costumer.php">Costumer</a></li>
         <li><a href="planing.php">Planning</a></li>
+        <li><a href="user.php">User</a></li>
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
